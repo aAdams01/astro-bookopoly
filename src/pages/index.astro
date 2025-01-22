@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +6,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
-</Layout>
+	<section class="flex h-screen justify-center items-center flex-col">
+		<div class="animate-pulse">
+			<h1 class="m-auto text-center text-4xl font-serif font-bold">Welcome to Bookopoly</h1>
+			<h2 class="m-auto text-center text-xl">Would you like to play?</h2>
+		</div>
+		<a href="#" class="my-6 relative px-6 py-3 font-bold text-black group">
+			<span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-violet-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+			<span class="absolute inset-0 w-full h-full border-4 border-black"></span>
+			<span class="relative uppercase">Let's Roll</span>
+		</a>
+	</section>
+</Layout> 
