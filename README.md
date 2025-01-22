@@ -2,7 +2,7 @@
 
 Do you like to read? No?! This project isn't for you then. 
 
-Shoo... You heard what I said -- git!
+Shoo... You heard what I said &mdash; git!
 
 Oh, so you do like to read? Well, in that case, this project is a handy dandy little game much **like Monopoly but for books**. 'Nough said.
 
