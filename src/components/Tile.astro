@@ -1,0 +1,13 @@
+---
+const { piece, colorBand, prompt } = Astro.props;
+---
+<article class="bg-white border-black w-[175px] h-[250px] border">
+  <div class={`h-[35px] ${colorBand ? 'custom-' + colorBand : ''}`}></div>
+  <h2>{prompt}</h2>
+  <h3>This is a {piece} game tile</h3>
+</article>
+<style>
+  .custom-lime {
+    background-color: #63D471;
+  }
+</style> 

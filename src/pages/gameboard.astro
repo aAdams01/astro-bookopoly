@@ -1,8 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Tile from '../components/Tile.astro';
+
+const prompt = 'testing',
+      piece = 'corner',
+      colorBand = 'lime';
 ---
 <Layout>
-  <section class="flex h-screen justify-center items-center flex-col">
-    <h1>build it, and they will come</h1>
+  <section class="flex mt-8 justify-center items-center flex-col">
+    <h1 class="m-auto text-center text-4xl font-serif font-bold">Game, start!</h1>
+    <div class="flex h-screen justify-center items-center flex-col">
+      <Tile prompt={prompt} 
+            piece={piece} 
+            colorBand={colorBand} />
+    </div>
   </section>
 </Layout>
