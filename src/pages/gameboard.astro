@@ -9,12 +9,12 @@ import booksdata from '../data/books.json';
       <div class="board">
         {/* TODO: create specialized corner tiles */}
         <div class="center-box"></div>
-        {/* TODO: use grid to style gameboard square */}
+        {/* TODO: grid to style gameboard square & use index to know when to wrap tiles */}
           <div class="grid gap-2 horitzontal-row">
             {
-              booksdata.map((book) => {
+              booksdata.map((book, index) => {
                 return (
-                  <div>
+                  <div class={`tile-${index}`}>
                     <Tile prompt={book.subgenre}
                         colorBand={book.genre} />
                   </div>
