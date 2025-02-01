@@ -29,11 +29,11 @@
   },
   {
     "genre": "Western",
-    "subgenre": "Contemporary"
+    "subgenre": "Modern-day Western"
   },
   {
     "genre": "Western",
-    "subgenre": "Old West"
+    "subgenre": "Lawmen & Bounty Hunters"
   },
   {
     "genre": "Romance",
@@ -41,11 +41,11 @@
   },
   {
     "genre": "Romance",
-    "subgenre": "Contemporary"
+    "subgenre": "Sport Romance"
   },
   {
     "genre": "Romance",
-    "subgenre": "Paranormal"
+    "subgenre": "Romantasy"
   },
   {
     "genre": "Science Fiction",
@@ -81,7 +81,7 @@
   },
   {
     "genre": "Middle grade",
-    "subgenre": "Mystery"
+    "subgenre": "Sleuth"
   },
   {
     "genre": "Mystery",
@@ -89,7 +89,7 @@
   },
   {
     "genre": "Mystery",
-    "subgenre": "Noir"
+    "subgenre": "Nordic Noir"
   },
   {
     "genre": "Mystery",
