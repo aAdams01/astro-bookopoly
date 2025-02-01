@@ -1,13 +1,34 @@
 ---
-const { piece, colorBand, prompt } = Astro.props;
+const {colorBand, prompt } = Astro.props;
 ---
-<article class="bg-white border-black w-[175px] h-[250px] border">
-  <div class={`h-[35px] ${colorBand ? 'custom-' + colorBand : ''}`}></div>
-  <h2>{prompt}</h2>
-  <h3>This is a {piece} game tile</h3>
+<article class="bg-white border-black w-[175px] h-[250px] border flex flex-col justify-between">
+  <div class={`h-[35px] ${colorBand ? 'custom-' + colorBand.replace(/\s+/g, '-').toLowerCase() : ''}`}></div>
+    <h2 class="text-center uppercase text-xl mx-2">{prompt}</h2>
+    <p class="text-center mx-2 text-sm">{colorBand}</p>
 </article>
 <style>
-  .custom-lime {
-    background-color: #63D471;
+  .custom-fantasy {
+    background-color: #5b5f97;
+  }
+  .custom-thriller {
+    background-color: #FF6b6c;
+  }
+  .custom-western {
+    background-color: #D5C7BC;
+  }
+  .custom-romance {
+    background-color: #C38D94;
+  }
+  .custom-science-fiction {
+    background-color: #53917E;
+  }
+  .custom-nonfiction {
+    background-color: #8499B1;
+  }
+  .custom-middle-grade {
+    background-color: #F18F01;
+  }
+  .custom-mystery {
+    background-color: #210203;
   }
 </style> 

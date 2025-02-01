@@ -1,0 +1,98 @@
+[
+  {
+    "genre": "Fantasy",
+    "subgenre": "Epic Fantasy"
+  },
+  {
+    "genre": "Fantasy",
+    "subgenre": "Grimdark"
+  },
+  {
+    "genre": "Fantasy",
+    "subgenre": "Sword & Sorcery"
+  },
+  {
+    "genre": "Thriller",
+    "subgenre": "Psychological Thriller"
+  },
+  {
+    "genre": "Thriller",
+    "subgenre": "Police Procedural"
+  },
+  {
+    "genre": "Thriller",
+    "subgenre": "Action Thriller"
+  },
+  {
+    "genre": "Western",
+    "subgenre": "Revenge Western"
+  },
+  {
+    "genre": "Western",
+    "subgenre": "Contemporary"
+  },
+  {
+    "genre": "Western",
+    "subgenre": "Old West"
+  },
+  {
+    "genre": "Romance",
+    "subgenre": "Historical"
+  },
+  {
+    "genre": "Romance",
+    "subgenre": "Contemporary"
+  },
+  {
+    "genre": "Romance",
+    "subgenre": "Paranormal"
+  },
+  {
+    "genre": "Science Fiction",
+    "subgenre": "Space Opera"
+  },
+  {
+    "genre": "Science Fiction",
+    "subgenre": "Alternate History"
+  },
+  {
+    "genre": "Science Fiction",
+    "subgenre": "Afrofuturism"
+  },
+  {
+    "genre": "Nonfiction",
+    "subgenre": "Memoir"
+  },
+  {
+    "genre": "Nonfiction",
+    "subgenre": "Health & Wellness"
+  },
+  {
+    "genre": "Nonfiction",
+    "subgenre": "HERstory"
+  },
+  {
+    "genre": "Middle grade",
+    "subgenre": "Newberry Award Winner"
+  },
+  {
+    "genre": "Middle grade",
+    "subgenre": "Fantasy"
+  },
+  {
+    "genre": "Middle grade",
+    "subgenre": "Mystery"
+  },
+  {
+    "genre": "Mystery",
+    "subgenre": "Cozy"
+  },
+  {
+    "genre": "Mystery",
+    "subgenre": "Noir"
+  },
+  {
+    "genre": "Mystery",
+    "subgenre": "Romantic Suspense"
+  }
+]
