@@ -8,7 +8,7 @@ import CornerTile from '../components/CornerTile.astro';
   <section class="flex mt-8 justify-center items-center flex-col">
     <h1 class="m-auto text-center text-4xl font-serif font-bold">Game, start!</h1>
       <div id="groups" class="board">
-        {/* TODO: create specialized corner tiles */}
+        <CornerTile />
         <div class="center-box"></div>
           {
             booksdata.map((book, index) => {
@@ -30,6 +30,8 @@ import CornerTile from '../components/CornerTile.astro';
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 150px);
+    max-width: 1200px;
+    margin: 40px 20px;
   }
 
   .center-box {
@@ -39,20 +41,6 @@ import CornerTile from '../components/CornerTile.astro';
     justify-items: center;
     align-items: center;
     background-color: white;
-  }
-
-  .vertical-row {
-    grid-template-columns: 150px;
-    grid-template-rows: repeat(8, 1fr);
-  }
-
-  .vertical-row [class*="tile"] {
-    transform: rotate(90deg);
-  }
-
-  .horizontal-row {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 150px;
   }
  
   /* bottom row, horizontal */
@@ -71,7 +59,10 @@ import CornerTile from '../components/CornerTile.astro';
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 150px;
     display: grid;
-    transform: rotate(180deg);
+  }
+  
+  .group-2 article {
+    flex-direction: column-reverse;
   }
 
   /* left col, vertical */
