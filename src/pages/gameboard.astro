@@ -10,7 +10,7 @@ import booksdata from '../data/books.json';
         {/* TODO: create specialized corner tiles */}
         <div class="center-box"></div>
         {/* TODO: grid to style gameboard square & use index to know when to wrap tiles */}
-          <div class="grid gap-2 horitzontal-row">
+          <div class="grid">
             {
               booksdata.map((book, index) => {
                 return (
@@ -26,32 +26,69 @@ import booksdata from '../data/books.json';
       </div>
   </section>
 </Layout>
+
 <style>
-.board {
-	display: grid;
-	grid-template-columns: 125px repeat(9, 80px) 125px;
-	grid-template-rows: 125px repeat(9, 80px) 125px;
-	grid-gap: 2px;
-	margin: 50px auto;
-	width: 994px;
-	height: 994px;
-	background: $black;
-	border: 2px solid $black;
-}
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 220px);
+  }
 
-.center-box {
-	grid-column: 2 / 11;
-	grid-row: 2 / 11;
-	background: $board;
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(7, 1fr);
-	justify-items: center;
-	align-items: center;
-}
+  .center-box {
+    grid-column: 2 / 8;
+    grid-row: 2 / 8;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+  }
 
-.horizontal-row {
-	grid-template-columns: repeat(9, 80px);
-	grid-template-rows: 125px;
-}
+  .vertical-row {
+    grid-template-columns: 220px;
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .vertical-row [class*="tile"] {
+    transform: rotate(90deg);
+  }
+
+  .horizontal-row {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 220px;
+  }
+
+  .top-row {
+    grid-column: 2 / 8;
+    grid-row: 1;
+  }
+  
+  .bottom-row {
+    grid-column: 2 / 8;
+    grid-row: 8;
+  }
 </style>
+
+<script>
+  /* TODO: add container with row + column specific classes based on tile group */
+  const rowSize = 6;
+  let tiles = document.querySelectorAll("[class*=tile-]");
+  console.log('tiles:', tiles);
+
+  // function assignDirection(size:number, tile:NodeList){
+  //   for (let i = 0; i < tile.length; i += size) {
+  //     // Iterate over divs, incrementing by 6
+
+  //     const container = document.createElement('div'); // Create a new container
+  //     container.classList.add("grid");
+
+  //     for (let j = i; j < i + 6 && j < tile.length; j++) {
+  //       // Move the next 6 divs into the container
+  //       container.appendChild(tile[j]);
+  // }
+  //     document.body.appendChild(container); // Add the container to the DOM
+  //   }
+  // }
+
+  // assignDirection(rowSize, tiles)
+
+</script>

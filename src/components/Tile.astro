@@ -1,9 +1,9 @@
 ---
 const {colorBand, prompt } = Astro.props;
 ---
-<article class="bg-white border-black w-[175px] h-[250px] border flex flex-col justify-between">
-  <div class={`h-[35px] ${colorBand ? 'custom-' + colorBand.replace(/\s+/g, '-').toLowerCase() : ''}`}></div>
-    <h2 class="text-center uppercase text-xl mx-2">{prompt}</h2>
+<article class="bg-white border-black w-[145px] h-[220px] border flex flex-col justify-between">
+  <div class={`h-[25px] ${colorBand ? 'custom-' + colorBand.replace(/\s+/g, '-').toLowerCase() : ''}`}></div>
+    <h2 class="text-center uppercase text-md mx-2">{prompt}</h2>
     <p class="text-center mx-2 text-sm">{colorBand}</p>
 </article>
 <style>
