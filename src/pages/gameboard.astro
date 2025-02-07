@@ -6,11 +6,10 @@ import booksdata from '../data/books.json';
 <Layout>
   <section class="flex mt-8 justify-center items-center flex-col">
     <h1 class="m-auto text-center text-4xl font-serif font-bold">Game, start!</h1>
-      <div class="board">
+      <div id="groups" class="board">
         {/* TODO: create specialized corner tiles */}
         <div class="center-box"></div>
         {/* TODO: grid to style gameboard square & use index to know when to wrap tiles */}
-          <div class="grid">
             {
               booksdata.map((book, index) => {
                 return (
@@ -21,13 +20,12 @@ import booksdata from '../data/books.json';
                 );
               })
             }
-          </div>
         </div>
       </div>
   </section>
 </Layout>
 
-<style>
+<style is:global>
   .board {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -56,39 +54,60 @@ import booksdata from '../data/books.json';
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 220px;
   }
-
-  .top-row {
-    grid-column: 2 / 8;
-    grid-row: 1;
-  }
-  
-  .bottom-row {
+ 
+  /* bottom row, horizontal */
+  .group-1 {
     grid-column: 2 / 8;
     grid-row: 8;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 220px;
   }
+
+  /* top row, horizontal */
+  .group-2 {
+    grid-column: 2 / 8;
+    grid-row: 1;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 220px;
+    display: grid;
+  }
+
+  /* left col, vertical */
+  .group-3 {
+    grid-column: 1;
+	  grid-row: 2 / 8;
+    margin-left: auto;
+  }
+
+  /* right col, vertical */
+  .group-4 {
+    grid-column: 8;
+	  grid-row: 2 / 8;
+  }
+
 </style>
 
 <script>
-  /* TODO: add container with row + column specific classes based on tile group */
   const rowSize = 6;
+  const parent = document.getElementById('groups');
   let tiles = document.querySelectorAll("[class*=tile-]");
-  console.log('tiles:', tiles);
 
-  // function assignDirection(size:number, tile:NodeList){
-  //   for (let i = 0; i < tile.length; i += size) {
-  //     // Iterate over divs, incrementing by 6
+  assignSide()
 
-  //     const container = document.createElement('div'); // Create a new container
-  //     container.classList.add("grid");
+  function assignSide(){ // Assign game tiles side on the board
+    let counter = 1;
+    
+    for (let i = 0; i < tiles.length; i += rowSize) {
+      
+      const container = document.createElement('div'); // Create tile group container
+      container.classList.add("group-" + counter++);
 
-  //     for (let j = i; j < i + 6 && j < tile.length; j++) {
-  //       // Move the next 6 divs into the container
-  //       container.appendChild(tile[j]);
-  // }
-  //     document.body.appendChild(container); // Add the container to the DOM
-  //   }
-  // }
+      for (let x = i; x < i + 6 && x < tiles.length; x++) {
+        container.appendChild(tiles[x]); // Move tiles into the container
+      }
 
-  // assignDirection(rowSize, tiles)
-
+        parent?.appendChild(container);
+    }
+  }
 </script>
