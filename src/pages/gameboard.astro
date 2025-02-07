@@ -9,17 +9,16 @@ import booksdata from '../data/books.json';
       <div id="groups" class="board">
         {/* TODO: create specialized corner tiles */}
         <div class="center-box"></div>
-        {/* TODO: grid to style gameboard square & use index to know when to wrap tiles */}
-            {
-              booksdata.map((book, index) => {
-                return (
-                  <div class={`tile-${index}`} date-genre={book.genre}>
-                    <Tile prompt={book.subgenre}
-                        colorBand={book.genre} />
-                  </div>
-                );
-              })
-            }
+          {
+            booksdata.map((book, index) => {
+              return (
+                <div class={`tile-${index}`} date-genre={book.genre}>
+                  <Tile prompt={book.subgenre}
+                      colorBand={book.genre} />
+                </div>
+              );
+            })
+          }
         </div>
       </div>
   </section>
@@ -85,7 +84,6 @@ import booksdata from '../data/books.json';
     grid-column: 8;
 	  grid-row: 2 / 8;
   }
-
 </style>
 
 <script>
