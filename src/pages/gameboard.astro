@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Tile from '../components/Tile.astro';
 import booksdata from '../data/books.json';
+import CornerTile from '../components/CornerTile.astro';
 ---
 <Layout>
   <section class="flex mt-8 justify-center items-center flex-col">
@@ -28,7 +29,7 @@ import booksdata from '../data/books.json';
   .board {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 220px);
+    grid-template-rows: repeat(8, 150px);
   }
 
   .center-box {
@@ -41,7 +42,7 @@ import booksdata from '../data/books.json';
   }
 
   .vertical-row {
-    grid-template-columns: 220px;
+    grid-template-columns: 150px;
     grid-template-rows: repeat(8, 1fr);
   }
 
@@ -51,7 +52,7 @@ import booksdata from '../data/books.json';
 
   .horizontal-row {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 220px;
+    grid-template-rows: 150px;
   }
  
   /* bottom row, horizontal */
@@ -60,7 +61,7 @@ import booksdata from '../data/books.json';
     grid-row: 8;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 220px;
+    grid-template-rows: 150px;
   }
 
   /* top row, horizontal */
@@ -68,8 +69,9 @@ import booksdata from '../data/books.json';
     grid-column: 2 / 8;
     grid-row: 1;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 220px;
+    grid-template-rows: 150px;
     display: grid;
+    transform: rotate(180deg);
   }
 
   /* left col, vertical */
@@ -79,10 +81,19 @@ import booksdata from '../data/books.json';
     margin-left: auto;
   }
 
+  .group-3 [class*="tile"] {
+    transform: rotate(90deg);
+  }
+
   /* right col, vertical */
   .group-4 {
     grid-column: 8;
 	  grid-row: 2 / 8;
+    margin-right: auto;
+  }
+
+  .group-4 [class*="tile"] {
+    transform: rotate(-90deg);
   }
 </style>
 
@@ -93,7 +104,7 @@ import booksdata from '../data/books.json';
 
   assignSide()
 
-  function assignSide(){ // Assign game tiles side on the board
+  function assignSide(){ // Assign game tiles side on board
     let counter = 1;
     
     for (let i = 0; i < tiles.length; i += rowSize) {
@@ -102,7 +113,7 @@ import booksdata from '../data/books.json';
       container.classList.add("group-" + counter++);
 
       for (let x = i; x < i + 6 && x < tiles.length; x++) {
-        container.appendChild(tiles[x]); // Move tiles into the container
+        container.appendChild(tiles[x]); // Move tiles into container
       }
 
         parent?.appendChild(container);
