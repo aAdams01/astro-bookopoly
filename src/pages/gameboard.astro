@@ -14,7 +14,7 @@ import booksdata from '../data/books.json';
             {
               booksdata.map((book, index) => {
                 return (
-                  <div class={`tile-${index}`}>
+                  <div class={`tile-${index}`} date-genre={book.genre}>
                     <Tile prompt={book.subgenre}
                         colorBand={book.genre} />
                   </div>
