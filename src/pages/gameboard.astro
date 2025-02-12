@@ -3,12 +3,23 @@ import Layout from '../layouts/Layout.astro';
 import Tile from '../components/Tile.astro';
 import booksdata from '../data/books.json';
 import CornerTile from '../components/CornerTile.astro';
+import promptsdata from '../data/prompts.json';
 ---
 <Layout>
   <section class="flex mt-8 justify-center items-center flex-col">
     <h1 class="m-auto text-center text-4xl font-serif font-bold">Game, start!</h1>
       <div id="groups" class="board">
-        <CornerTile />
+        {
+          promptsdata.map((prompt, index) => {
+            return (
+              <div class={`corner-${index}`}>
+                <CornerTile title={prompt.title}
+                  img={prompt.icon}
+                />
+              </div>
+            );
+          })
+        }
         <div class="center-box"></div>
           {
             booksdata.map((book, index) => {

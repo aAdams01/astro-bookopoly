@@ -1,5 +1,5 @@
 ---
-const {colorBand, prompt } = Astro.props;
+const { colorBand, prompt } = Astro.props;
 ---
 <article class="bg-white border-black w-[150px] h-[150px] border flex flex-col justify-between">
   <div class={`h-[25px] ${colorBand ? 'custom-' + colorBand.replace(/\s+/g, '-').toLowerCase() : ''}`}></div>

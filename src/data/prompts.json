@@ -1,0 +1,18 @@
+[
+  {
+    "title": "GO! Start a New Book.",
+    "icon": "src/assets/arrow.png"
+  },
+  {
+    "title": "Jail! Read a book under 150 pages to escape",
+    "icon": "src/assets/jail.png"
+  },
+  {
+    "title": "Free Parking! Mood Read Zone",
+    "icon": "src/assets/car-parking.png"
+  },
+  {
+    "title": "Go to Jail! Listen to an Audiobook",
+    "icon": "src/assets/gavel.png"
+  }
+]
